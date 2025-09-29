@@ -7,6 +7,7 @@ def main():
         time = "6:00 PM",
         location = "Omar Parents House",
         theme = "Motorcycle and Cars"
+        guest_list = 100
     )
 
 
