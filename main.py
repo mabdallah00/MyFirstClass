@@ -33,6 +33,9 @@ def main():
     print("\n--- After adding guests ---")
     birthday_party.print_event_details()
 
+
+    birthday_party.printProperties()
+
 if __name__ == "__main__":
     main()
 
