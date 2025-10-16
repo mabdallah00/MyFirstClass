@@ -8,7 +8,7 @@ git init
 git add .
 
 # Commit your code
-git commit -m "Initial commit - EventEase project with base class, inheritance, and API"
+git commit -m "Initial commit - Event project with base class, inheritance, and API"
 
 # Create a GitHub repo online (https://github.com/new)
 # Name it: EventEase
