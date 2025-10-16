@@ -18,3 +18,8 @@ git remote add origin https://github.com/mabdallah00/MyFirstClass.git
 # Push your code
 git branch -M main
 git push -u origin main
+
+git add docs/README.md docs/functional_requirements.json docs/functional_requirements.yml
+git commit -m "Add functional requirements in MD, JSON, and YAML"
+git push origin main
+
