@@ -1,0 +1,62 @@
+{
+  "project": "Party Event",
+  "host": "Maysam Abdallah",
+  "date": "October 2025",
+  "version": "1.0",
+  
+  "introduction": {
+    "purpose": "Outline functional requirements for EventEase, a web-based event management system.",
+    "scope": [
+      "Create and edit event details",
+      "View event summaries and dashboards",
+      "Manage guests and RSVPs",
+      "Send event reminders",
+      "Store and retrieve event data in database"
+    ],
+    "architecture": "MVC"
+  },
+  "users": [
+    {"role": "Event Host", "capabilities": ["create", "edit", "delete events", "invite guests", "view reports"]},
+    {"role": "Guest", "capabilities": ["view event details", "RSVP", "update attendance status"]}
+  ],
+  "functional_requirements": [
+    {"id": "FR-1", "name": "User Registration", "description": "Allow users to create an account with email and password.", "priority": "High"},
+    {"id": "FR-2", "name": "User Login", "description": "Allow registered users to log in securely.", "priority": "High"},
+    {"id": "FR-3", "name": "Create Event", "description": "Allow users to create events with title, date, time, venue, theme, and guest list.", "priority": "High"},
+    {"id": "FR-4", "name": "Edit Event", "description": "Allow users to modify event details.", "priority": "Medium"},
+    {"id": "FR-5", "name": "Delete Event", "description": "Allow users to delete events.", "priority": "Medium"},
+    {"id": "FR-6", "name": "View Event Summary", "description": "Display event information in a summary format.", "priority": "High"},
+    {"id": "FR-7", "name": "Manage Guests", "description": "Allow hosts to add, remove, or edit guest information.", "priority": "High"},
+    {"id": "FR-8", "name": "RSVP Response", "description": "Guests can RSVP Yes/No/Maybe.", "priority": "High"},
+    {"id": "FR-9", "name": "Notifications", "description": "Send reminders or updates to hosts and guests.", "priority": "Low"},
+    {"id": "FR-10", "name": "Data Storage", "description": "Store event and user data in a database.", "priority": "High"}
+  ],
+  "nonfunctional_requirements": [
+    {"id": "NFR-1", "name": "Performance", "description": "Pages load < 2 seconds."},
+    {"id": "NFR-2", "name": "Security", "description": "Credentials must be encrypted."},
+    {"id": "NFR-3", "name": "Usability", "description": "Responsive and user-friendly UI."},
+    {"id": "NFR-4", "name": "Reliability", "description": "Target 99% uptime."},
+    {"id": "NFR-5", "name": "Maintainability", "description": "Follow MVC and clean code patterns."}
+  ],
+  "use_cases": [
+    {"name": "Create Event", "actor": "Event Host", "precondition": "User logged in", "postcondition": "Event saved to DB"},
+    {"name": "Edit Event", "actor": "Event Host", "precondition": "Event exists", "postcondition": "Event updated"},
+    {"name": "RSVP to Event", "actor": "Guest", "precondition": "Guest received invite", "postcondition": "RSVP stored"},
+    {"name": "View Event Summary", "actor": "Host or Guest", "precondition": "User authenticated", "postcondition": "Event displayed"}
+  ],
+  "components": [
+    {"name": "Event Model", "description": "Stores event attributes", "use_cases": ["Create Event","Edit Event","View Event Summary"]},
+    {"name": "User Model", "description": "Stores user profile and auth", "use_cases": ["User Registration","RSVP"]},
+    {"name": "Event Controller", "description": "Create/edit/delete events", "use_cases": ["Create Event","Edit Event"]},
+    {"name": "RSVP Controller", "description": "Manage RSVPs", "use_cases": ["RSVP to Event"]},
+    {"name": "Dashboard View", "description": "Show event summaries", "use_cases": ["View Event Summary"]}
+  ],
+  "tests": [
+    {"id": "T-1", "feature": "User Registration", "expected": "Account created"},
+    {"id": "T-2", "feature": "Event Creation", "expected": "Event appears in dashboard"},
+    {"id": "T-3", "feature": "Event Editing", "expected": "Event details updated"},
+    {"id": "T-4", "feature": "RSVP", "expected": "RSVP saved and shown"},
+    {"id": "T-5", "feature": "Data Persistence", "expected": "Event data persists after refresh"}
+  ],
+  "references": ["docs/uml/", "MVC architectural plan", "EventEase base class"]
+}
