@@ -1,5 +1,5 @@
 # Navigate to your project folder
-cd EventEase
+cd Event
 
 # Initialize Git repository
 git init
@@ -13,7 +13,7 @@ git commit -m "Initial commit - EventEase project with base class, inheritance, 
 # Create a GitHub repo online (https://github.com/new)
 # Name it: EventEase
 # Then link it:
-git remote add origin https://github.com/YOUR_USERNAME/EventEase.git
+git remote add origin https://github.com/mabdallah00/MyFirstClass.git
 
 # Push your code
 git branch -M main
