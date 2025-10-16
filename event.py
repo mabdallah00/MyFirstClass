@@ -31,3 +31,8 @@ class Event:
     def add_guest(self, guest_name):
         self.guest_lost.append(guest_name)
         print(f"Guest '{guest_name}' has been added to the guest list.")
+
+    
+    def display_summary(self):
+        return (f"Event: {self.name}\nDate: {self.date}\n"
+                f"Time: {self.name}\nLocation: {self.venue}\nTheme: {self.theme}")
