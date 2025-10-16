@@ -1,0 +1,79 @@
+project: Party Event
+host: Maysam Abdallah
+date: October 2025
+version: "1.0"
+
+introduction:
+  purpose: "Outline functional requirements for EventEase, a web-based event management system."
+  scope:
+    - "Create and edit event details"
+    - "View event summaries and dashboards"
+    - "Manage guests and RSVPs"
+    - "Send event reminders"
+    - "Store and retrieve event data in database"
+  architecture: MVC
+
+users:
+  - role: Event Host
+    capabilities:
+      - create events
+      - edit events
+      - delete events
+      - invite guests
+      - view reports
+  - role: Guest
+    capabilities:
+      - view event details
+      - RSVP
+      - update attendance status
+
+functional_requirements:
+  - id: FR-1
+    name: User Registration
+    description: Allow users to create an account with email and password.
+    priority: High
+  - id: FR-2
+    name: User Login
+    description: Allow registered users to log in securely.
+    priority: High
+  - id: FR-3
+    name: Create Event
+    description: Allow users to create events with title, date, time, venue, theme, and guest list.
+    priority: High
+  # ... (other FR entries follow same pattern)
+nonfunctional_requirements:
+  - id: NFR-1
+    name: Performance
+    description: Pages load < 2s
+  - id: NFR-2
+    name: Security
+    description: Credentials must be encrypted
+  - id: NFR-3
+    name: Usability
+    description: Responsive and user-friendly UI
+
+use_cases:
+  - name: Create Event
+    actor: Event Host
+    precondition: User logged in
+    postcondition: Event saved to DB
+  - name: Edit Event
+    actor: Event Host
+    precondition: Event exists
+    postcondition: Event updated
+
+components:
+  - name: Event Model
+    description: Stores event attributes
+  - name: User Model
+    description: Stores user profile and auth
+
+tests:
+  - id: T-1
+    feature: User Registration
+    expected: Account created
+
+references:
+  - docs/uml/
+  - MVC architectural plan
+  - EventEase base class
